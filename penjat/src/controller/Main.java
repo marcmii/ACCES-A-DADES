@@ -1,7 +1,9 @@
 package controller;
 
+import java.io.*;
 import java.util.Scanner;
-import view.PenjatView; // Importem la vista
+import model.User;
+import view.PenjatView;
 
 public class Main {
 
@@ -10,37 +12,94 @@ public class Main {
         Scanner in = new Scanner(System.in);
         PenjatView view = new PenjatView();
 
-        // Mostrem el menú
-        view.mostrarMenuPrincipal();
+        int option;
 
-        // Llegim l’opció de l’usuari
-        String option = in.nextLine();
+        do {
+            view.mostrarMenuPrincipal();
+            System.out.print("Escull una opció: ");
+            option = in.nextInt();
+            in.nextLine();
 
-        // Tractem l’opció
-        switch (option) {
-            case "1":
-                
-                break;
-            case "2":
-                
-                break;
-            default:
-                System.out.println("Opció no vàlida!");
-        }
+            if (option == 1) {
+                login(in);
+            } else if (option == 2) {
+                register(in);
+            } else if (option != 0) {
+                System.out.println("Opció no vàlida");
+            }
 
+        } while (option != 0);
+
+        System.out.println("Has sortit del programa.");
         in.close();
     }
 
     private static void login(Scanner in) {
-        System.out.print("Usuari: ");
-        String usuari = in.nextLine();
+        System.out.print("Nom d'usuari: ");
+        String username = in.nextLine();
+        System.out.print("Contrasenya: ");
+        String password = in.nextLine();
+
+        File fitxer = new File("data/" + username + ".usr");
+
+        if (!fitxer.exists()) {
+            System.out.println("No s’ha trobat l’usuari.");
+            return;
+        }
+
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fitxer))) {
+            User usuari = (User) ois.readObject();
+
+            if (usuari.getPassword().equals(password)) {
+                System.out.println("✅ Accés correcte! Benvingut/da, " + usuari.getName());
+                System.out.println("Rol: " + (usuari.isAdmin() ? "Administrador" : "Usuari normal"));
+                System.out.println("Punts actuals: " + usuari.getPunts());
+            } else {
+                System.out.println("❌ Contrasenya incorrecta.");
+            }
+
+        } catch (Exception e) {
+            System.out.println("Error llegint l'usuari: " + e.getMessage());
+        }
+    }
+
+    private static void register(Scanner in) {
+
+        // Crea la carpeta data si veu no existeix
+        File dataFolder = new File("data");
+        if (!dataFolder.exists()) {
+            dataFolder.mkdir();
+        }
+
+        System.out.print("Nom complet: ");
+        String name = in.nextLine();
+
+        System.out.print("Nom d'usuari: ");
+        String username = in.nextLine();
+
+        File fitxer = new File(dataFolder, username + ".usr");
+
+        if (fitxer.exists()) {
+            System.out.println("Aquest usuari ja existeix!");
+            return;
+        }
 
         System.out.print("Contrasenya: ");
         String password = in.nextLine();
 
-        System.out.println("Intentant fer login amb usuari: " + usuari);
-        // Aquí podries afegir la lògica d'autenticació
-    }
+        System.out.print("Vols que aquest usuari sigui administrador? (s/n): ");
+        String resposta = in.nextLine();
+        boolean admin = resposta.equalsIgnoreCase("s");
 
-    
+        int punts = 0; 
+
+        User nou = new User(name, username, password, admin, punts);
+
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fitxer))) {
+            oos.writeObject(nou);
+            System.out.println("Usuari registrat correctament!");
+        } catch (IOException e) {
+            System.out.println("Error guardant l’usuari: " + e.getMessage());
+        }
+    }
 }

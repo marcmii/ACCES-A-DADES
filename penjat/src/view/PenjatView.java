@@ -7,8 +7,9 @@ public class PenjatView {
         System.out.println("-------------");
         System.out.println("    MENU");
         System.out.println("-------------");
+        System.out.println("0 - Sortir");
         System.out.println("1 - Login");
-        System.out.println("2 - Register");
+        System.out.println("2 - Registrar-se");
         System.out.print("--> ");
     }
 
