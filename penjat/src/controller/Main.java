@@ -21,7 +21,11 @@ public class Main {
             in.nextLine();
 
             if (option == 1) {
-                login(in);
+                User usuari = login(in);
+                if (usuari != null) {
+                    // 🔹 Cridem la vista per mostrar el menú d’usuari
+                    view.mostrarMenuUsuari(in, usuari);
+                }
             } else if (option == 2) {
                 register(in);
             } else if (option != 0) {
@@ -34,7 +38,8 @@ public class Main {
         in.close();
     }
 
-    private static void login(Scanner in) {
+    // ---------- LOGIN ----------
+    private static User login(Scanner in) {
         System.out.print("Nom d'usuari: ");
         String username = in.nextLine();
         System.out.print("Contrasenya: ");
@@ -44,7 +49,7 @@ public class Main {
 
         if (!fitxer.exists()) {
             System.out.println("No s’ha trobat l’usuari.");
-            return;
+            return null;
         }
 
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fitxer))) {
@@ -54,18 +59,21 @@ public class Main {
                 System.out.println("✅ Accés correcte! Benvingut/da, " + usuari.getName());
                 System.out.println("Rol: " + (usuari.isAdmin() ? "Administrador" : "Usuari normal"));
                 System.out.println("Punts actuals: " + usuari.getPunts());
+                return usuari;
             } else {
                 System.out.println("❌ Contrasenya incorrecta.");
+                return null;
             }
 
         } catch (Exception e) {
             System.out.println("Error llegint l'usuari: " + e.getMessage());
+            return null;
         }
     }
 
+    // ---------- REGISTER ----------
     private static void register(Scanner in) {
 
-        // Crea la carpeta data si veu no existeix
         File dataFolder = new File("data");
         if (!dataFolder.exists()) {
             dataFolder.mkdir();
@@ -91,7 +99,7 @@ public class Main {
         String resposta = in.nextLine();
         boolean admin = resposta.equalsIgnoreCase("s");
 
-        int punts = 0; 
+        int punts = 0;
 
         User nou = new User(name, username, password, admin, punts);
 
