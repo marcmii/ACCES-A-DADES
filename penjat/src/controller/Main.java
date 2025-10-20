@@ -23,7 +23,6 @@ public class Main {
             if (option == 1) {
                 User usuari = login(in);
                 if (usuari != null) {
-                    // 🔹 Cridem la vista per mostrar el menú d’usuari
                     view.mostrarMenuUsuari(in, usuari);
                 }
             } else if (option == 2) {
@@ -48,7 +47,7 @@ public class Main {
         File fitxer = new File("data/" + username + ".usr");
 
         if (!fitxer.exists()) {
-            System.out.println("No s’ha trobat l’usuari.");
+            System.out.println("No s'ha trobat l'usuari.");
             return null;
         }
 
@@ -56,12 +55,12 @@ public class Main {
             User usuari = (User) ois.readObject();
 
             if (usuari.getPassword().equals(password)) {
-                System.out.println("✅ Accés correcte! Benvingut/da, " + usuari.getName());
+                System.out.println("Accés correcte! Benvingut/da, " + usuari.getName());
                 System.out.println("Rol: " + (usuari.isAdmin() ? "Administrador" : "Usuari normal"));
                 System.out.println("Punts actuals: " + usuari.getPunts());
                 return usuari;
             } else {
-                System.out.println("❌ Contrasenya incorrecta.");
+                System.out.println("La Contrasenya es incorrecta.");
                 return null;
             }
 
@@ -107,7 +106,7 @@ public class Main {
             oos.writeObject(nou);
             System.out.println("Usuari registrat correctament!");
         } catch (IOException e) {
-            System.out.println("Error guardant l’usuari: " + e.getMessage());
+            System.out.println("Error guardant l'usuari: " + e.getMessage());
         }
     }
 }

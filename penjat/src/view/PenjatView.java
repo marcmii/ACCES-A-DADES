@@ -20,7 +20,7 @@ public class PenjatView {
         int opcio;
 
         do {
-            System.out.println("\n--- MENÚ D’USUARI ---");
+            System.out.println("\n--- MENÚ D'USUARI ---");
             System.out.println("1. Afegir paraules" + (usuari.isAdmin() ? "" : " (només per administradors)"));
             System.out.println("2. Jugar");
             System.out.println("0. Tancar sessió");
