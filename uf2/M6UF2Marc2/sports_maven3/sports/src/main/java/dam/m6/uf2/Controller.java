@@ -2,7 +2,7 @@ package dam.m6.uf2;
 
 import java.sql.Connection;
 import java.util.List;
-// Versió bona!!!
+// pujat a github
 public class Controller {
 
     Connection conn;
