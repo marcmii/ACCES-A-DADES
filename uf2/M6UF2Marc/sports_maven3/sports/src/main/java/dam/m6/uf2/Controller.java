@@ -2,7 +2,7 @@ package dam.m6.uf2;
 
 import java.sql.Connection;
 import java.util.List;
-// pujat a github
+// pujat a github 19:50
 public class Controller {
 
     Connection conn;
