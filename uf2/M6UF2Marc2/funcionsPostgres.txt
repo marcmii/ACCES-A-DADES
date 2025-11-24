@@ -1,0 +1,28 @@
+CREATE OR REPLACE FUNCTION llista_esports()
+RETURNS TABLE (
+    cod INTEGER,
+    nombre VARCHAR
+)
+AS $$
+BEGIN
+    RETURN QUERY
+    SELECT d.cod, d.nombre
+    FROM deportes d
+    ORDER BY d.cod;
+END;
+$$ LANGUAGE plpgsql;
+
+
+CREATE OR REPLACE FUNCTION llistar_atletes(p_id INT)
+RETURNS TABLE(cod INT, nom VARCHAR, esport VARCHAR) AS $$
+BEGIN
+    RETURN QUERY 
+        SELECT dep.cod, dep.nombre, d.nombre
+        FROM deportistas dep
+        JOIN deportes d ON d.cod = dep.cod_deporte
+        WHERE dep.cod_deporte = p_id
+        ORDER BY dep.nombre;
+END;
+$$ LANGUAGE plpgsql;
+
+
