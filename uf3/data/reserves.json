@@ -1,0 +1,227 @@
+[
+   {
+      "dataReserva": {
+         "$date": "2024-12-01T19:00:00Z"
+      },
+      "clientNom": "Anna",
+      "restaurantNom": "El Racó",
+      "nombrePersones": 2,
+      "estat": "confirmada"
+   },
+   {
+      "dataReserva": {
+         "$date": "2024-12-02T20:00:00Z"
+      },
+      "clientNom": "Marc",
+      "restaurantNom": "La Piazza",
+      "nombrePersones": 4,
+      "estat": "pendent"
+   },
+   {
+      "dataReserva": {
+         "$date": "2024-12-03T21:00:00Z"
+      },
+      "clientNom": "Laura",
+      "restaurantNom": "Can Toni",
+      "nombrePersones": 3,
+      "estat": "confirmada"
+   },
+   {
+      "dataReserva": {
+         "$date": "2024-12-04T19:30:00Z"
+      },
+      "clientNom": "Jordi",
+      "restaurantNom": "El Racó",
+      "nombrePersones": 5,
+      "estat": "cancel·lada"
+   },
+   {
+      "dataReserva": {
+         "$date": "2024-12-05T20:30:00Z"
+      },
+      "clientNom": "Marta",
+      "restaurantNom": "La Piazza",
+      "nombrePersones": 2,
+      "estat": "confirmada"
+   },
+   {
+      "dataReserva": {
+         "$date": "2024-12-06T21:00:00Z"
+      },
+      "clientNom": "Pau",
+      "restaurantNom": "Can Toni",
+      "nombrePersones": 6,
+      "estat": "pendent"
+   },
+   {
+      "dataReserva": {
+         "$date": "2024-12-07T19:00:00Z"
+      },
+      "clientNom": "Clara",
+      "restaurantNom": "El Racó",
+      "nombrePersones": 4,
+      "estat": "confirmada"
+   },
+   {
+      "dataReserva": {
+         "$date": "2024-12-08T20:00:00Z"
+      },
+      "clientNom": "Nil",
+      "restaurantNom": "La Piazza",
+      "nombrePersones": 2,
+      "estat": "cancel·lada"
+   },
+   {
+      "dataReserva": {
+         "$date": "2024-12-09T21:30:00Z"
+      },
+      "clientNom": "Sara",
+      "restaurantNom": "Can Toni",
+      "nombrePersones": 3,
+      "estat": "confirmada"
+   },
+   {
+      "dataReserva": {
+         "$date": "2024-12-10T19:30:00Z"
+      },
+      "clientNom": "Oriol",
+      "restaurantNom": "El Racó",
+      "nombrePersones": 5,
+      "estat": "pendent"
+   },
+   {
+      "dataReserva": {
+         "$date": "2024-12-11T20:00:00Z"
+      },
+      "clientNom": "Eva",
+      "restaurantNom": "La Piazza",
+      "nombrePersones": 4,
+      "estat": "confirmada"
+   },
+   {
+      "dataReserva": {
+         "$date": "2024-12-12T21:00:00Z"
+      },
+      "clientNom": "Pol",
+      "restaurantNom": "Can Toni",
+      "nombrePersones": 2,
+      "estat": "confirmada"
+   },
+   {
+      "dataReserva": {
+         "$date": "2024-12-13T19:00:00Z"
+      },
+      "clientNom": "Irene",
+      "restaurantNom": "El Racó",
+      "nombrePersones": 6,
+      "estat": "cancel·lada"
+   },
+   {
+      "dataReserva": {
+         "$date": "2024-12-14T20:30:00Z"
+      },
+      "clientNom": "David",
+      "restaurantNom": "La Piazza",
+      "nombrePersones": 3,
+      "estat": "pendent"
+   },
+   {
+      "dataReserva": {
+         "$date": "2024-12-15T21:00:00Z"
+      },
+      "clientNom": "Núria",
+      "restaurantNom": "Can Toni",
+      "nombrePersones": 4,
+      "estat": "confirmada"
+   },
+   {
+      "dataReserva": {
+         "$date": "2024-12-16T19:30:00Z"
+      },
+      "clientNom": "Roger",
+      "restaurantNom": "El Racó",
+      "nombrePersones": 2,
+      "estat": "confirmada"
+   },
+   {
+      "dataReserva": {
+         "$date": "2024-12-17T20:00:00Z"
+      },
+      "clientNom": "Laia",
+      "restaurantNom": "La Piazza",
+      "nombrePersones": 5,
+      "estat": "cancel·lada"
+   },
+   {
+      "dataReserva": {
+         "$date": "2024-12-18T21:30:00Z"
+      },
+      "clientNom": "Albert",
+      "restaurantNom": "Can Toni",
+      "nombrePersones": 3,
+      "estat": "confirmada"
+   },
+   {
+      "dataReserva": {
+         "$date": "2024-12-19T19:00:00Z"
+      },
+      "clientNom": "Gemma",
+      "restaurantNom": "El Racó",
+      "nombrePersones": 4,
+      "estat": "pendent"
+   },
+   {
+      "dataReserva": {
+         "$date": "2024-12-20T20:00:00Z"
+      },
+      "clientNom": "Xavi",
+      "restaurantNom": "La Piazza",
+      "nombrePersones": 2,
+      "estat": "confirmada"
+   },
+   {
+      "dataReserva": {
+         "$date": "2024-12-21T21:00:00Z"
+      },
+      "clientNom": "Sergi",
+      "restaurantNom": "Can Toni",
+      "nombrePersones": 6,
+      "estat": "pendent"
+   },
+   {
+      "dataReserva": {
+         "$date": "2024-12-22T19:30:00Z"
+      },
+      "clientNom": "Paula",
+      "restaurantNom": "El Racó",
+      "nombrePersones": 3,
+      "estat": "confirmada"
+   },
+   {
+      "dataReserva": {
+         "$date": "2024-12-23T20:00:00Z"
+      },
+      "clientNom": "Adrià",
+      "restaurantNom": "La Piazza",
+      "nombrePersones": 4,
+      "estat": "confirmada"
+   },
+   {
+      "dataReserva": {
+         "$date": "2024-12-24T21:00:00Z"
+      },
+      "clientNom": "Marina",
+      "restaurantNom": "Can Toni",
+      "nombrePersones": 2,
+      "estat": "cancel·lada"
+   },
+   {
+      "dataReserva": {
+         "$date": "2024-12-25T20:30:00Z"
+      },
+      "clientNom": "Joel",
+      "restaurantNom": "El Racó",
+      "nombrePersones": 5,
+      "estat": "confirmada"
+   }
+]
