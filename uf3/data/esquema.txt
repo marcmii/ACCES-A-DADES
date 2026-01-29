@@ -1,0 +1,8 @@
+{
+  "_id": ObjectId,
+  "dataReserva": ISODate("2024-12-01T19:00:00Z"),
+  "clientId": ObjectId,
+  "restaurantId": ObjectId,
+  "nombrePersones": 2,
+  "estat": "confirmada"
+}
