@@ -1,8 +1,10 @@
 package dam.m6.uf2;
 
 import java.io.File;
+
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+
 import org.w3c.dom.Document;
 
 
@@ -68,7 +70,7 @@ public class ReadConfigXML {
 			user = doc.getElementsByTagName("user").item(0).getTextContent();
 			password = doc.getElementsByTagName("password").item(0).getTextContent();
 			database = doc.getElementsByTagName("database").item(0).getTextContent();
-System.out.println("host");
+			System.out.println("host");
 		} catch (Exception e) {
 			System.out.println("Error" + e.getMessage());
 

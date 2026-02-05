@@ -14,7 +14,6 @@ public class Controller {
     }
 
     private void init() {
-
         this.conn = ConnectionManager.getConnection("database.xml");
         MainView view = new MainView();
 
