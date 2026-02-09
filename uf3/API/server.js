@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const app = express();
 const port = process.env.PORT || 3021;
 
-// Middleware
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
