@@ -1,4 +1,4 @@
-Enllaç api vercel --> https://api-five-orpin-61.vercel.app/
+Enllaç api vercel --> https://api2-liard.vercel.app/
 Endpoints de la API:
   · /
   · /list
