@@ -6,7 +6,7 @@ import com.mongodb.client.MongoDatabase;
 
 public class ConnectionManager {
 
-    private static final String URI = "mongodb+srv://marc:1234@cluster0.7bfaucb.mongodb.net/";
+    private static final String URI = "mongodb://localhost:27017";
     private static MongoClient client;
 
     public static MongoDatabase getConnection() {

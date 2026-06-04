@@ -3,53 +3,35 @@ package dam.m6.uf2;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
 public class DeportesPgDAO implements DAO<Deportes> {
-
     private Connection conn;
 
     public DeportesPgDAO(Connection conn) {
         this.conn = conn;
     }
 
-    @Override
     public void add(Deportes d) {
-        if (conn == null) return;
-
-        try (PreparedStatement pst = conn.prepareStatement(
-            "INSERT INTO deportes(nombre) VALUES(?)")) {
-
+        try (PreparedStatement pst = conn.prepareStatement("INSERT INTO deportes(nombre) VALUES(?)")) {
             pst.setString(1, d.getNombre());
             pst.executeUpdate();
-
-        } catch (SQLException ex) {
-            ex.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("Error afegint esport: " + e.getMessage());
         }
     }
 
-    @Override
     public List<Deportes> getAll() {
         List<Deportes> list = new ArrayList<>();
-
-        if (conn == null) return list;
-
-        try (Statement st = conn.createStatement();
-             ResultSet rs = st.executeQuery("SELECT cod, nombre FROM deportes ORDER BY nombre")) {
-
+        try (PreparedStatement pst = conn.prepareStatement("SELECT cod, nombre FROM llista_esports()");
+             ResultSet rs = pst.executeQuery()) {
             while (rs.next()) {
-                int cod = rs.getInt("cod");
-                String nom = rs.getString("nombre");
-                list.add(new Deportes(cod, nom));
+                list.add(new Deportes(rs.getInt("cod"), rs.getString("nombre")));
             }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            System.out.println("Error llistant esports: " + e.getMessage());
         }
-
         return list;
     }
 }

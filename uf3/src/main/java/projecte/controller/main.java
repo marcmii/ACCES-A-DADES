@@ -1,20 +1,20 @@
 package projecte.controller;
 
+import projecte.model.Model;
 import projecte.model.Reserva;
-import projecte.model.ReservaModel;
 import projecte.view.View;
 
 public class main {
 
     public static void main(String[] args) {
 
-        ReservaModel model = new ReservaModel();
+        Model model = new Model();
         View view = new View();
 
         int opcio;
         do {
             opcio = view.menu();
-
+  
             switch (opcio) {
                 case 1:
                     Reserva r = view.demanarReserva();
@@ -40,7 +40,7 @@ public class main {
                     break;
 
                 case 0:
-                    System.out.println("Sortint...");
+                    System.out.println("Has sortit del progrma");
                     break;
             }
 
