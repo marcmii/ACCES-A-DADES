@@ -21,7 +21,7 @@ public class Deportes {
     private String nombre;
 
     public Deportes() {
-        // Constructor buit necessari per Hibernate.
+        
     }
 
     public Deportes(int cod, String nombre) {

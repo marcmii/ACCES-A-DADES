@@ -5,24 +5,24 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Document;
 
 public class Main {
-    // Constants generals del joc.
+    
     static final int MIDA = 5;
     static final int TOTAL_VAIXELLS = 7;
-    static final int REGISTRE = 5; // writeChar + writeChar + writeBoolean
+    static final int REGISTRE = 5; 
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
         try {
-            // Llegim el titol i el nombre maxim de tirs del fitxer XML.
+            
             Document xml = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(new File("config.xml"));
             String titol = xml.getElementsByTagName("title").item(0).getTextContent();
             int maxTirs = Integer.parseInt(xml.getElementsByTagName("max-shots").item(0).getTextContent());
 
-            // Primer l'usuari s'ha de registrar o iniciar sessio.
+           
             System.out.println("=== " + titol + " ===");
             menuUsuari();
 
-            // Despres pot comencar una partida nova o recuperar una partida anterior.
+            //  comencar una partida nova o recuperar una partida anterior.
             System.out.print("J: Jugar\nR: Recuperar partida\nOpcio: ");
             if (sc.nextLine().trim().equalsIgnoreCase("R")) recuperar();
             else jugar(maxTirs);
@@ -102,7 +102,9 @@ public class Main {
                 // Marquem T si ha tocat un vaixell, o A si ha caigut a l'aigua.
                 boolean tocat = vaixells[fila][col];
                 taulell[fila][col] = tocat ? 'T' : 'A';
-                if (tocat) tocats++;
+                if (tocat){
+                    tocats++;
+                } 
 
                 // Guardem la jugada al fitxer binari game.dat.
                 game.seek((long) tir * REGISTRE);
